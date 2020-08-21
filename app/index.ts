@@ -26,6 +26,11 @@ app.all("*", (req: any, res: any, next: any) => {
   next();
 });
 
+// tslint:disable-next-line:only-arrow-functions
+app.get("/", function (req, res) {
+  res.send(JSON.stringify({ Hello: "World" }));
+});
+
 app.use("/api", routes);
 
 app.use((err: any, req: any, res: any, next: any) => {
