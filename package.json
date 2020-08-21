@@ -34,7 +34,7 @@
     "clean": "rm -rf build",
     "tsc": "tsc --noEmit",
     "build": "npm run clean && mkdir build && babel app -s -d build --extensions '.ts,.js'",
-    "start-prod": "node build",
+    "start-prod": "node build"
   },
   "author": "",
   "license": "ISC",
