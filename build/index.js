@@ -29,6 +29,15 @@ app.all("*", function (req, res, next) {
   next();
 });
 app.use("/api", _routes["default"]);
+app.use(function (err, req, res, next) {
+  if (err.status) {
+    res.status(err.status).send({
+      error: err === null || err === void 0 ? void 0 : err.message
+    });
+  } else {
+    res.status(400).send(err);
+  }
+});
 app.listen(process.env.SERVER_PORT, function () {
   return console.log("VDC app listening on port ".concat(process.env.SERVER_PORT, "!"));
 });

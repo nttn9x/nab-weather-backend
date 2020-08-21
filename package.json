@@ -2,12 +2,13 @@
   "name": "vdc-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/index.js",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "netlify-lambda": "^2.0.1",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
@@ -32,8 +33,9 @@
     "start": "nodemon --exec babel-node app/index.ts --extensions \".ts\"",
     "clean": "rm -rf build",
     "tsc": "tsc --noEmit",
-    "build": "npm run clean && mkdir build && babel app -s -d build --extensions '.ts,.js'",
-    "start-prod": "node build"
+    "build-prod": "npm run clean && mkdir build && babel app -s -d build --extensions '.ts,.js'",
+    "start-prod": "node build",
+    "build": "netlify-lambda build build"
   },
   "author": "",
   "license": "ISC",
