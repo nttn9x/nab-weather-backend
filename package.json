@@ -33,9 +33,8 @@
     "start": "nodemon --exec babel-node app/index.ts --extensions \".ts\"",
     "clean": "rm -rf build",
     "tsc": "tsc --noEmit",
-    "build-prod": "npm run clean && mkdir build && babel app -s -d build --extensions '.ts,.js'",
+    "build": "npm run clean && mkdir build && babel app -s -d build --extensions '.ts,.js'",
     "start-prod": "node build",
-    "build": "netlify-lambda build build"
   },
   "author": "",
   "license": "ISC",
